@@ -72,7 +72,7 @@ const data = {
 
 const allPaths = getJPathsAsObject(data);
 
-const filteredPaths = getJPaths(data, {
+const filteredPaths = getJPathsAsObject(data, {
   maxArrayElements: 10,
   maxDepth: 5,
   includeJPathRegexps: [/^user./, /^settings.theme$/], // Include specified paths only
