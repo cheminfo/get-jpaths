@@ -54,6 +54,43 @@ const filteredPaths = getJPaths(data, {
 console.log(filteredPaths);
 ```
 
+Alternatively you can return an object mapping jpaths to their corresponding primitive value:
+
+```js
+import { getJPathsAsObject } from 'get-jpaths';
+
+const data = {
+  user: {
+    name: 'Alice',
+    password: 'secret',
+  },
+  settings: {
+    theme: 'dark',
+    notifications: true,
+  },
+};
+
+const allPaths = getJPathsAsObject(data);
+
+const filteredPaths = getJPaths(data, {
+  maxArrayElements: 10,
+  maxDepth: 5,
+  includeJPathRegexps: [/^user./, /^settings.theme$/], // Include specified paths only
+  excludeJPathRegexps: [/password/], // Exclude sensitive 'password' path
+});
+
+// filteredPaths:
+// {
+//   'user.name': 'Alice',
+//   'settings.theme': 'dark'
+// }
+console.log(filteredPaths);
+```
+
 ## License
 
 [MIT](./LICENSE)
+
+```
+
+```
