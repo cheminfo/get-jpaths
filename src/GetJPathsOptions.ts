@@ -18,11 +18,21 @@ export interface GetJPathsOptions {
   maxDepth?: number;
 
   /**
+   * Array of string jpaths to include in the results. If omitted or empty, all paths are included unless excluded by excludeJPaths.
+   */
+  includeJPaths?: string[];
+
+  /**
    * Array of RegExp instances; only jpaths matching any of these regexps are included.
    * If omitted or empty, all paths are included unless excluded by excludeJPaths.
    * @default []
    */
   includeJPathRegexps?: RegExp[];
+
+  /**
+   * Array of string jpaths to exclude from the results. If omitted or empty, no paths are excluded if included by includeJPaths.
+   */
+  excludeJPaths?: string[];
 
   /**
    * Array of RegExp instances; jpaths matching any of these regexps are excluded.

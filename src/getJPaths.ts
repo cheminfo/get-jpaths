@@ -15,17 +15,25 @@ export function getJPaths(
   const {
     maxArrayElements = 5,
     maxDepth = 3,
+    includeJPaths = [],
+    excludeJPaths = [],
     includeJPathRegexps = [],
     excludeJPathRegexps = [],
   } = options;
 
   function matchesInclude(path: string): boolean {
-    if (includeJPathRegexps.length === 0) return true;
+    if (includeJPaths.length === 0 && includeJPathRegexps.length === 0) {
+      return true;
+    }
+    if (includeJPaths.length > 0 && includeJPaths.includes(path)) return true;
     return includeJPathRegexps.some((re) => re.test(path));
   }
 
   function isExcluded(path: string): boolean {
-    if (excludeJPathRegexps.length === 0) return false;
+    if (excludeJPaths.length === 0 && excludeJPathRegexps.length === 0) {
+      return false;
+    }
+    if (excludeJPaths.length > 0 && excludeJPaths.includes(path)) return true;
     return excludeJPathRegexps.some((re) => re.test(path));
   }
 

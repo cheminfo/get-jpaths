@@ -179,3 +179,47 @@ test('combined includeJPathRegexps and excludeJPathRegexps', () => {
 
   expect(result).toStrictEqual(expected);
 });
+
+test('includeJPaths option filters included paths', () => {
+  const input = {
+    user: { name: 'Bob', password: '12345', email: 'bob@example.com' },
+    settings: { theme: 'light', notifications: false },
+    version: 2,
+  };
+
+  const options = {
+    includeJPaths: ['user.password', 'settings.notifications'],
+  };
+
+  const expected = [
+    { jpath: 'user.password', value: '12345' },
+    { jpath: 'settings.notifications', value: false },
+  ];
+
+  const result = getJPaths(input, options);
+
+  expect(result).toStrictEqual(expected);
+});
+
+test('excludeJPaths option filters excluded paths', () => {
+  const input = {
+    user: { name: 'Bob', password: '12345', email: 'bob@example.com' },
+    settings: { theme: 'light', notifications: false },
+    version: 2,
+  };
+
+  const options = {
+    excludeJPaths: ['user.password', 'settings.notifications'],
+  };
+
+  const expected = [
+    { jpath: 'user.name', value: 'Bob' },
+    { jpath: 'user.email', value: 'bob@example.com' },
+    { jpath: 'settings.theme', value: 'light' },
+    { jpath: 'version', value: 2 },
+  ];
+
+  const result = getJPaths(input, options);
+
+  expect(result).toStrictEqual(expected);
+});
