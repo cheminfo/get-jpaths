@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/cheminfo/get-jpaths/compare/v1.1.0...v1.2.0) (2026-01-06)
+
+
+### Features
+
+* add includeJPaths and excludeJPaths options ([fd51fb1](https://github.com/cheminfo/get-jpaths/commit/fd51fb1820c36988cf14b3550d933eed956cdd31))
+
 ## [1.1.0](https://github.com/cheminfo/get-jpaths/compare/v1.0.0...v1.1.0) (2025-11-18)
 
 
