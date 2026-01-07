@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/cheminfo/get-jpaths/compare/v1.3.0...v1.4.0) (2026-01-07)
+
+
+### Features
+
+* expose type for options ([b587e63](https://github.com/cheminfo/get-jpaths/commit/b587e63f66f32182593cbe596a1682d47d5d0e8c))
+
 ## [1.3.0](https://github.com/cheminfo/get-jpaths/compare/v1.2.0...v1.3.0) (2026-01-07)
 
 
