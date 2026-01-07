@@ -40,4 +40,11 @@ export interface GetJPathsOptions {
    * @default []
    */
   excludeJPathRegexps?: RegExp[];
+
+  /**
+   * Modifiers to apply to values before including them in the results.
+   * They are evaluated while traversing the object so the value do not have
+   * to be primitive before applying them.
+   */
+  modifiers?: Record<string, (value: unknown) => unknown>;
 }

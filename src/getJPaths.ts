@@ -19,7 +19,13 @@ export function getJPaths(
     excludeJPaths = [],
     includeJPathRegexps = [],
     excludeJPathRegexps = [],
+    modifiers = {},
   } = options;
+
+  // convert modifiers to a Map for faster access
+  const modifiersMap = new Map<string, (value: unknown) => unknown>(
+    Object.entries(modifiers),
+  );
 
   function matchesInclude(path: string): boolean {
     if (includeJPaths.length === 0 && includeJPathRegexps.length === 0) {
@@ -41,6 +47,11 @@ export function getJPaths(
     // Stop if depth exceeds maximum
     if (depth > maxDepth) {
       return [];
+    }
+
+    const modifier = modifiersMap.get(prefix);
+    if (modifier) {
+      value = modifier(value);
     }
 
     let result: JPathEntry[] = [];
