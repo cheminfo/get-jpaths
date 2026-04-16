@@ -27,18 +27,18 @@
     "tsc-build": "tsc --project tsconfig.build.json"
   },
   "dependencies": {
-    "is-any-array": "^2.0.1"
+    "is-any-array": "^3.0.0"
   },
   "devDependencies": {
-    "@types/node": "^25.0.3",
-    "@vitest/coverage-v8": "^4.0.16",
-    "@zakodium/tsconfig": "^1.0.2",
+    "@types/node": "^25.6.0",
+    "@vitest/coverage-v8": "^4.1.4",
+    "@zakodium/tsconfig": "^1.0.5",
     "eslint": "^9.39.2",
-    "eslint-config-cheminfo-typescript": "^21.0.1",
-    "prettier": "^3.7.4",
-    "rimraf": "^6.1.2",
+    "eslint-config-cheminfo-typescript": "^22.0.0",
+    "prettier": "^3.8.3",
+    "rimraf": "^6.1.3",
     "typescript": "^5.9.3",
-    "vitest": "^4.0.16"
+    "vitest": "^4.1.4"
   },
   "repository": {
     "type": "git",
