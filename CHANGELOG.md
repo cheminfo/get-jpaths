@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.1](https://github.com/cheminfo/get-jpaths/compare/v1.4.0...v1.4.1) (2026-04-16)
+
+
+### Bug Fixes
+
+* update is-any-array ([e5dd72b](https://github.com/cheminfo/get-jpaths/commit/e5dd72b3de44bf088b4623f6f1a9e3bb373d1a80))
+
 ## [1.4.0](https://github.com/cheminfo/get-jpaths/compare/v1.3.0...v1.4.0) (2026-01-07)
 
 
